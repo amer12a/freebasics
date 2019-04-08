@@ -7,310 +7,52 @@ set_time_limit(0);
  * Date: 3/13/2018
  * Time: 5:40 PM
  */
+ $folder_name = "header";
+
+if ($handle = opendir($folder_name)) {
+
+    while (false !== ($entry = readdir($handle))) {
+
+        if ($entry != "." && $entry != "..") {
+			
+			$file_name = $folder_name . '/' . $entry;
+		//	unlink($file_name);
+        }
+    }
+
+    closedir($handle);
+}
+
+ 
+ 
+// array_map('unlink', glob("$foder_name/*")); // delete all files in folder 
+ 
 $sitelist = array(
-    'dordam24.tk',
-    'actiontrick.tk',
-    'mizanbd.cf',
-    'trickan.ga',
-    'chaamp.tk',
-    'joybdnews.tk',
-    'tips24life.tk',
-    'bonasbd.tk',
-    'www.bd-sobjanta.tk',
-    'amnibd.tk',
-    'joybdnews.tk',
-    'www.enamulhaque.ml',
-    'chaamp.tk',
-    'smartbd.ml',
-    'puretricks.cf',
-    'puretricks.ml',
-    'tips24life.tk',
-    'alltrickbd.ml',
-    'www.amdmtech.tk',
-    'ViralTune24.ml',
-    'www.tipsfair.ml',
-    'www.trickology.tk',
-    'multitube.ga',
-    'lifeboook.cf',
-    'grcdj.ga',
-    'www.amcomputer24.tk',
-    'techtalk24.ml',
-    'winfreerecharge.tk',
-    'BdSamrat.tk',
-    'gochat.ga',
-    'Bestsite24.tk',
-    'tipsmix9.tk',
-    'ouradsbd.ga',
-    'tech-notepad.tk',
-    'tipsin24.tk',
-    'trickbn.ga',
-    'tipsmix24.ga',
-    'tipsmix9.tk',
-    'bdlog.tk',
-    'bdlog24.ml',
-    'tunewapi.ga',
-    'tipsmix9.tk',
-    'buysite.ga',
-    'fanbook.gq',
-    '24worldtips.ml',
-    'fibd.ml',
-    'www.bdonlineshikkha.tk',
-    'earnperinstall.tk',
-    'ouradsbd.ga',
-    'ourwap24.cf',
-    'amarbera.tk',
-    'alorkafelabd.tk',
-    'bdyousufctg.tk',
-    'nicebook.ga',
-    'bdislame24.tk',
-    'exambd.ga',
-    'nstrick.tk',
-    'anytips.tk',
-    'www.abc24.ga',
-    '9makers.ga',
-    'kobim.ga',
-    'www.nubd.ml',
-    'gpfreenet.ga',
-    'www.nandinaidealschoolandcollege.tk',
-    'typebd.ml',
-    'www.tipscity.ml',
-    'techtipser.ml',
-    'Trickall.ml',
-    'trickbd789.ml',
-    'Trickmart24.ml',
-    'tripsbd.ml',
-    'discussion.gq',
-    'www.dordam24.tk',
-    'newblogbd.gq',
-    'www.funhostbd.ml',
-    'symbianbd.tk',
-    'www.freetunes.cf',
-    'freenettips.ga',
-    'banglalife.ml',
-    'banglarapps.ml',
-    'banglarapps.ml',
-    'www.banglarmati.tk',
-    'bdnill.tk',
-    'bdsport.ga',
-    'bestbudyz.cf',
-    'bongotech.ga',
-    'breakingnews24hrs.gq',
-    'www.valobashargolpo.tk',
-    'myband.ga',
-    'mysuperwap.tk',
-    'masubd24.ga',
-    'ruposibd24.ml',
-    'tvinlive.tk',
-    'somoybangladesh.ga',
-    'www.easyphp.cf',
-    'simofferbd.ga',
-    'hastisundanews.cf',
-    'www.himuspage.tk',
-    'trickbdwap.cf',
-    'www.abc24.ml',
-    'adtrickbd.ga',
-    'canbd.ml',
-    'allsimoffer.ga',
-    'alltips2400.ga',
-    'alltrick24.ga',
-    'islamifty.ml',
-    'amarlovetips.tk',
-    'amartrickbd.ml',
-    'amirhamja.tk',
-    'androidbangla.ml',
-    'www.androidtech24.ml',
-    'apkfile4fun.tk',
-    'apsbd.ga',
-    'www.arafatbangla.tk',
-    'areyanmusic.ga',
-    'Asmankhalinews.tk',
-    'assasin24.gq',
-    'atlas4d.ga',
-    'atlas4d.ml',
-    'atlas4d.tk',
-    'azandroidtipsbd.tk',
-    'banglasms.ga',
-    'BanglaTrick.ga',
-    'www.riponbd22.ml',
-    'bdandroidzone.ga',
-    'BDApon26.tk',
-    'bdemran24.ga',
-    'sms.bdmehedi.tk',
-    'bdmobile1.cf',
-    'bdnewton.ml',
-    'bdtipstop.cf',
-    'bdtipstop.ml',
-    'soitfl.ga',
-    'bilasbd.tk',
-    'birdsongbd.tk',
-    'bonasbd.ml',
-    'bonasbd.ga',
-    'www.cakrinewsbd.tk',
-    'chotigolpo24.gq',
-    'clashwithahk.tk',
-    'cssmela.tk',
-    'www.ctgnewsbd.tk',
-    'Uischool.cf',
-    'www.androidmaster.cf',
-    'downtube.ml',
-    'ecche.cf',
-    'eftunes.ga',
-    'englishclubmagrahs.ml',
-    'fashionbd.ga',
-    'fastelbd.tk',
-    'www.feedo.ml',
-    'findtrick22.ga',
-    'firstexamresultbd.tk',
-    'fnsbook.ga',
-    'forum.fourskilllevels.cf',
-    'freenet24.gq',
-    'mukta.ml',
-    'funszone.tk',
-    'goldwap.ga',
-    'gotrick22.ga',
-    'Techbuzz.ga',
-    'agro.bd.greenair.ga',
-    'grelipha.ga',
-    'Halpbd.ml',
-    'hamzarehman.cf',
-    'helimbd.ga',
-    'www.hi-tech818.tk',
-    'www.hihello.cf',
-    'hitips.ga',
-    'hotpottips.tk',
-    'www.how2fun.tk',
-    'bdfreetricks.ga',
-    'helpline22.ga',
-    'tipsdunia24.cf',
-    'trickhaat.ml',
-    'ictwapbd.ga',
-    'ittipsbd.cf',
-    'ittipsbd.cf',
-    'jaberbd.ml',
-    'Trickraja.ga',
-    'jbnews24bd.ml',
-    'jibonbd.ml',
-    'www.joybiswas.tk',
-    'kissabd.tk',
-    'www.kurdtechblog.tk',
-    'kushtia.tk',
-    'lalshobuj.tk',
-    'earnperinstall.tk',
-    'leonworld.tk',
-    'lgcbotany.ml',
-    'lifebd.ga',
-    'lifeboook.cf',
-    'likebd.tk',
-    'lovestory4you.tk',
-    'likeplan.tk',
-    'masterbabu.cf',
-    'Masterwap.ga',
-    'masterwap.ga',
-    'www.healthtipsbd0.tk',
-    'megatips24.gq',
-    'megatrick.ga',
-    'free.minggle.ml',
-    'miransb.tk',
-    'mkblog.ga',
-    'www.motionwap.ml',
-    'mrfaltu24.ml',
-    'myadultfun.ml',
-    'myadultfun.ml',
-    'mydreambd.tk',
-    'mymtune.tk',
-    'mytipsmela.cf',
-    'naeembd4.tk',
-    'Netrobi.ml',
-    'New-tipsbd.ga',
-    'newtopicbd.ga',
-    'nicebook.gq',
-    'nobokori.tk',
-    'oursmsbd.gq',
-    'www.owntips.ml',
-    'owntips.ml',
-    'www.primetech.cf',
-    'priyotunebd.ga',
-    'protricks.ml',
-    'dooplays.ml',
-    'rainbd24.ml',
-    'rainwap.ga',
-    'risebd.ml',
-    'www.rokonbiswas.tk',
-    'www.rozbd.tk',
-    'm.rpicmt.cf',
-    'www.ruposhibangla.tk',
-    'Samiulbd.ga',
-    'www.healthbangla.ml',
-    'shaadsoft.gq',
-    'sharifweb.cf',
-    'www.smsguru.ml',
-    'smsfair.cf',
-    'www.sunniaqida.ml',
-    'superbd.ml',
-    'tanvirbd24.ml',
-    'teachbd.cf',
-    'smartbd25.ml',
-    'technews24bd.tk',
-    'techblogbd.ga',
-    'techfriends.ml',
-    'www.techlog.ga',
-    'www.techsky.cf',
-    'techtrackbd.ml',
-    'sikkhabd.ga',
-    'www.mhmomin.tk',
-    'tipsfair.ga',
-    'kabebook.tk',
-    'tipsamki.tk',
-    'tipsandtrick.ga',
-    'tipsbd.ga',
-    'tipshurry24.ml',
-    'www.tipsliker.ml',
-    'Tipslove24.ga',
-    'tipspure.ml',
-    'tipsbd.cf',
-    'TipsStory.ga',
-    'aktips24.tk',
-    'Toptrips.ml',
-    'tricklikhi.cf',
-    'tipsmix9.tk',
-    'trickbd.cf',
-    'djdhoom24.cf',
-    'TipsStory.ga',
-    'Trickbd1.ga',
-    'trickbdjustin.cf',
-    'trickbn.ga',
-    'trickers24.ml',
-    'www.trickgro.tk',
-    'trickhelp.ml',
-    'tricktime24.cf',
-    'trickweb24.ga',
-    'trixworld.tk',
-    'www.tttunes.tk',
-    'tune24.ga',
-    'tunemade.ml',
-    'turnbd.ml',
-    'wapbazaar.ga',
-    'www.waptrickbd.tk',
-    'afreesmsbd.tk',
-    'www.amdmtech.tk',
-    'wrestlebd.ml',
-    'www.bdjoynalctg.ml',
-    'www.youdate.ml',
-    'zahidteach.ml',
-    'itbunyad.gq'
+   
 );
 
 
 
 function func_get_content($myurl)
 {
+	$host = parse_url($myurl, PHP_URL_HOST);
     $ch = curl_init();
-    $agent = 'tab mobile';
+	$agents = ['tab mobile','opera mini android','google chrome','uc browser','mozilla firefox 70'];
+    $agent = $agents[1];
     curl_setopt($ch, CURLOPT_URL, $myurl);
     curl_setopt($ch, CURLOPT_USERAGENT, $agent);
       curl_setopt($ch, CURLOPT_HEADER, true); // header
     curl_setopt($ch,CURLOPT_NOBODY,true);
-    curl_setopt($ch,CURLOPT_TIMEOUT,15);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+       // "Host: $host",
+      //  "Cookie: ",
+        "Accept-Language: en-US,en;q=0.5",
+      //  "DNT: 1",
+        "Connection: keep-alive",
+      //  "Accept-Encoding: gzip, deflate"
+        )
+    );
+    curl_setopt($ch,CURLOPT_TIMEOUT,30);
     curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -320,38 +62,27 @@ function func_get_content($myurl)
     echo $error;
     $result = curl_exec($ch);
     curl_close($ch);
+    sleep(1);
     return  $result;
 }
 $i = 0;
 
 foreach($sitelist as $site)
 {
-if($i>5)
-{
- //   exit();
-}
 
-    $pos = strpos($site,'.tk');
-    $pos2 = strpos($site,'.cf');
-    $pos3 = strpos($site,'.gq');
-    $pos4 = strpos($site,'.ga');
-    $pos5 = strpos($site,'.ml');
-if($pos >0 or $pos2 > 0 or $pos3 > 0 or $pos4 > 0 or $pos5 > 0)
-{
+
     echo "'".$site . "',\n";
 
     if(is_file('header/'.$site))
     {
 
     }else{
+        $handle = fopen("$folder_name/".$site,'w+');
         $respose = func_get_content('http://' . $site);
-        $handle = fopen('header/'.$site,'w+');
         fwrite($handle,$respose);
         fclose($handle);
     }
 
-}
-$i++;
 }
 
 echo "\n--------- all complete ";
