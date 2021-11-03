@@ -1,4 +1,4 @@
-<?php 
+Amir
 
 $hotsx = array("jobs.bdjobs.com",
 "pavilion.com.bd",
